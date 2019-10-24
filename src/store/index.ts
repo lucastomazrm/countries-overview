@@ -6,10 +6,12 @@ import history from '../routes/history';
 import { CountryState } from './ducks/country/types';
 import rootReducer from './ducks/rootReducer';
 import rootSaga from './ducks/rootSaga';
+import { ThemeType } from './ducks/theme/types';
 
 export interface ApplicationState {
   router: RouterState;
   countries: CountryState;
+  theme: ThemeType;
 }
 
 const sagaMiddleware = createSagaMiddleware();

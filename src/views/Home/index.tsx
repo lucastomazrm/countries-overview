@@ -20,7 +20,7 @@ const Home = (props: Props) => {
   }, [props.countries.data]);
 
   return (
-    <div>
+    <div style={{ backgroundColor: props.theme.primaryColor }}>
       <button
         onClick={() => {
           props.loadAllCountries();

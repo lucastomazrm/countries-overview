@@ -28,7 +28,6 @@ export default class FetchService {
 
   public get(resource: string) {
     const uri = this.formatURL(resource);
-
     return this.sendRequest(uri);
   }
 }
