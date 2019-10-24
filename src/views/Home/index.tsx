@@ -5,8 +5,10 @@ import * as CountryActions from "../../store/ducks/country/actions";
 import * as ThemeActions from "../../store/ducks/theme/actions";
 import { connect } from "react-redux";
 import { ThemeType } from "../../store/ducks/theme/types";
-import { darkTheme } from "../../store/ducks/theme/themes";
 import Container from "../../components/Container";
+import Row from "../../components/Row";
+import SearchBox from "../../components/SearchBox";
+import Dropdown from "../../components/Dropdown";
 
 interface DispatchProps {
   loadAllCountries(region?: string): void;
@@ -26,13 +28,14 @@ const Home = (props: Props) => {
 
   return (
     <Container>
-      <button
-        onClick={() => {
-          props.changeTheme(darkTheme);
-        }}
-      >
-        teste
-      </button>
+      <Row>
+        <div style={{ flex: 1 }}>
+          <SearchBox type="text" onChange={() => {}} />
+        </div>
+        <div style={{ flex: 2, display: "flex", justifyContent: "flex-end" }}>
+          <Dropdown onChange={() => {}} />
+        </div>
+      </Row>
     </Container>
   );
 };

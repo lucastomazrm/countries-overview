@@ -1,8 +1,8 @@
 import { Reducer } from "redux";
 import { ThemeActions, ThemeType } from "./types";
-import { lightTheme } from "./themes";
+import { lightTheme, darkTheme } from "./themes";
 
-const INITIAL_STATE: ThemeType = lightTheme;
+const INITIAL_STATE: ThemeType = darkTheme;
 
 const reducer: Reducer<ThemeType> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
