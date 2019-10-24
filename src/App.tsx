@@ -7,11 +7,13 @@ import { Route, Switch } from "react-router-dom";
 import store from "./store";
 import history from "./routes/history";
 import Home from "./views/Home";
+import Header from "./components/Header";
 
 const App = () => (
   <Provider store={store}>
     <ThemeProvider theme={store.getState().theme}>
       <ConnectedRouter history={history}>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>

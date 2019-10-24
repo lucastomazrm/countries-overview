@@ -3,6 +3,7 @@
  */
 
 export interface ThemeType {
+  name: string;
   primaryColor: string; // Elements
   secondaryColor: string; // Background
   text: string; // Text

@@ -6,7 +6,7 @@ import * as ThemeActions from "../../store/ducks/theme/actions";
 import { connect } from "react-redux";
 import { ThemeType } from "../../store/ducks/theme/types";
 import { darkTheme } from "../../store/ducks/theme/themes";
-import { Container } from "./style";
+import Container from "../../components/Container";
 
 interface DispatchProps {
   loadAllCountries(region?: string): void;
@@ -25,7 +25,7 @@ const Home = (props: Props) => {
   }, [props.countries.data]);
 
   return (
-    <Container theme={props.theme}>
+    <Container>
       <button
         onClick={() => {
           props.changeTheme(darkTheme);
