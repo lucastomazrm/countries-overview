@@ -1,10 +1,12 @@
-
 /**
  * Data types
  */
 
 export interface ThemeType {
-  primaryColor: string;
+  primaryColor: string; // Elements
+  secondaryColor: string; // Background
+  text: string; // Text
+  input: string; // Input
 }
 
 /**
