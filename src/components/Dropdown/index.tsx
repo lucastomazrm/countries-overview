@@ -35,7 +35,9 @@ const Dropdown = (props: Props) => {
         }}
         theme={props.theme}
       >
-        <option value="">Filter By Region</option>
+        <option value="" disabled>
+          Filter By Region
+        </option>
         {regions.map(region => (
           <option key={region} value={region.toLowerCase()}>
             {region}

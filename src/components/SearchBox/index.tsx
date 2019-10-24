@@ -33,6 +33,7 @@ const SearchBox = (props: Props) => {
         onBlur={() => setFocus(false)}
         type={props.type}
         theme={props.theme}
+        onChange={event => props.onChange(event.target.value)}
         placeholder="Search for a country..."
       />
     </div>

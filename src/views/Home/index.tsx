@@ -30,10 +30,19 @@ const Home = (props: Props) => {
     <Container>
       <Row>
         <div style={{ flex: 1 }}>
-          <SearchBox type="text" onChange={() => {}} />
+          <SearchBox
+            type="text"
+            onChange={value => {
+              console.log(value);
+            }}
+          />
         </div>
         <div style={{ flex: 2, display: "flex", justifyContent: "flex-end" }}>
-          <Dropdown onChange={() => {}} />
+          <Dropdown
+            onChange={region => {
+              props.loadAllCountries(region);
+            }}
+          />
         </div>
       </Row>
     </Container>

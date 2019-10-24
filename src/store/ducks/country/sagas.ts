@@ -12,8 +12,8 @@ const fetchApi = new FetchService('https://restcountries.eu/rest/v2/');
 export function* getCountries({ payload }: AnyAction) {
   try {
     let uri = 'all';
-    if (payload && payload.region) {
-      uri = `regionalbloc/${payload.region}`;
+    if (payload) {
+      uri = `region/${payload}`;
     }
     const { data, error }: { data: Country[]; error: ComonError } = yield call(fetchApi.get.bind(fetchApi), uri);
     if (error) {
