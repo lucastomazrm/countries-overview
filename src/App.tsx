@@ -1,4 +1,5 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { Route, Switch } from "react-router-dom";
@@ -9,11 +10,13 @@ import Home from "./views/Home";
 
 const App = () => (
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
-    </ConnectedRouter>
+    <ThemeProvider theme={store.getState().theme}>
+      <ConnectedRouter history={history}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </ConnectedRouter>
+    </ThemeProvider>
   </Provider>
 );
 
