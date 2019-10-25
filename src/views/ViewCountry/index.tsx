@@ -103,7 +103,18 @@ const ViewCountry = (props: Props) => {
             <OtherCountries theme={props.theme}>
               Border Countries:{" "}
               {country.borders.map(border => (
-                <span key={border}>{border}</span>
+                <span
+                  key={border}
+                  onClick={() => {
+                    setCountry(
+                      props.countries.data.find(
+                        country => country.alpha3Code === border
+                      )
+                    );
+                  }}
+                >
+                  {border}
+                </span>
               ))}
             </OtherCountries>
           </DetailsStyle>

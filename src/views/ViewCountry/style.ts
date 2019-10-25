@@ -78,6 +78,7 @@ export const OtherCountries = styled.div<{ theme: ThemeType }>`
     color: ${props => props.theme.text};
     padding: 5px 15px;
     margin: 0 5px;
+    cursor: pointer;
     font-weight: 300;
     @media (max-width: 812px) {
       margin: 5px;
