@@ -3,9 +3,9 @@
  */
 
 export enum CountryTypes {
-  LOAD_ALL_COUNTRIES = '@Country/LOAD_ALL_COUNTRIES',
-  LOAD_ALL_COUNTRIES_SUCCESS = '@Country/LOAD_ALL_COUNTRIES_SUCCESS',
-  REQUEST_FAILURE = '@Country/REQUEST_FAILURE',
+  LOAD_ALL_COUNTRIES = "@Country/LOAD_ALL_COUNTRIES",
+  LOAD_ALL_COUNTRIES_SUCCESS = "@Country/LOAD_ALL_COUNTRIES_SUCCESS",
+  REQUEST_FAILURE = "@Country/REQUEST_FAILURE"
 }
 
 /**
@@ -50,7 +50,7 @@ export interface Country {
   timezones: string[];
   borders: string[];
   nativeName: string;
-  numericCode: number;
+  numericCode: string;
   currencies: Currency[];
   languages: Language[];
   translations: any;

@@ -11,6 +11,7 @@ import SearchBox from "../../components/SearchBox";
 import Dropdown from "../../components/Dropdown";
 import { Country } from "../../store/ducks/country/types";
 import CountryCard from "../../components/CountryCard";
+import { DropdownDiv } from "./style";
 
 interface DispatchProps {
   loadAllCountries(region?: string): void;
@@ -45,13 +46,13 @@ const Home = (props: Props) => {
             }}
           />
         </div>
-        <div style={{ flex: 2, display: "flex", justifyContent: "flex-end" }}>
+        <DropdownDiv>
           <Dropdown
             onChange={region => {
               props.loadAllCountries(region);
             }}
           />
-        </div>
+        </DropdownDiv>
       </Row>
       <div
         style={{
@@ -62,7 +63,7 @@ const Home = (props: Props) => {
       >
         {countries &&
           countries.map(country => (
-            <CountryCard country={country} key={country.alpha3Code} />
+            <CountryCard country={country} key={country.numericCode} />
           ))}
       </div>
     </Container>

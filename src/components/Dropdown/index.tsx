@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SelectStyle } from "./style";
+import { SelectStyle, SelectDiv } from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
 import { ApplicationState } from "../../store";
@@ -16,17 +16,7 @@ const Dropdown = (props: Props) => {
   const [selectedRegion, setRegion] = useState();
 
   return (
-    <div style={{ position: "relative", display: "flex", minHeight: "52px" }}>
-      <FontAwesomeIcon
-        icon={faChevronDown}
-        style={{
-          position: "absolute",
-          top: "18",
-          right: "20",
-          transition: "opacity 0.3s ease-in-out"
-        }}
-        color={props.theme.text}
-      />
+    <SelectDiv theme={props.theme}>
       <SelectStyle
         value={selectedRegion}
         onChange={event => {
@@ -44,7 +34,15 @@ const Dropdown = (props: Props) => {
           </option>
         ))}
       </SelectStyle>
-    </div>
+      <FontAwesomeIcon
+        icon={faChevronDown}
+        style={{
+          flex: 1,
+          transition: "opacity 0.3s ease-in-out"
+        }}
+        color={props.theme.text}
+      />
+    </SelectDiv>
   );
 };
 

@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { ThemeType } from "../../store/ducks/theme/types";
 
-export const RowStyle = styled.div<{ theme: ThemeType }>`
+export const DropdownDiv = styled.div`
+  flex: 2;
   display: flex;
-  padding: 3rem 5rem;
-  flex-flow: row wrap;
-
+  justify-content: flex-end;
   @media (max-width: 812px) {
-    padding: 3rem 2rem;
+    justify-content: flex-start;
   }
 `;

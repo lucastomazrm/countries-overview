@@ -6,8 +6,9 @@ import { Route, Switch } from "react-router-dom";
 
 import store from "./store";
 import history from "./routes/history";
-import Home from "./views/Home";
+import Countries from "./views/Countries";
 import Header from "./components/Header";
+import ViewCountry from "./views/ViewCountry";
 
 const App = () => {
   document.body.style.backgroundColor = store.getState().theme.secondaryColor;
@@ -17,7 +18,8 @@ const App = () => {
         <ConnectedRouter history={history}>
           <Header />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Countries} />
+            <Route exact path="/Country/:countryId?" component={ViewCountry} />
           </Switch>
         </ConnectedRouter>
       </ThemeProvider>

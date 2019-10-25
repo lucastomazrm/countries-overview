@@ -43,4 +43,8 @@ export const OtherInfo = styled.span<{ color: string }>`
   color: ${props => props.color};
   font-size: 14px;
   padding: 5px 0;
+
+  span {
+    font-weight: 300;
+  }
 `;
