@@ -5,7 +5,6 @@ export const HeaderStyle = styled.div<{ theme: ThemeType }>`
   background-color: ${props => props.theme.primaryColor};
   height: 80px;
   width: 100%;
-  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
