@@ -9,6 +9,8 @@ import Container from "../../components/Container";
 import Row from "../../components/Row";
 import SearchBox from "../../components/SearchBox";
 import Dropdown from "../../components/Dropdown";
+import { Country } from "../../store/ducks/country/types";
+import CountryCard from "../../components/CountryCard";
 
 interface DispatchProps {
   loadAllCountries(region?: string): void;
@@ -18,11 +20,13 @@ interface DispatchProps {
 type Props = DispatchProps & ApplicationState;
 
 const Home = (props: Props) => {
+  const [countries, setCountries] = useState<Country[]>();
+
   useEffect(() => {
     if (!props.countries.data.length) {
       props.loadAllCountries();
     } else {
-      console.log(props.countries.data);
+      setCountries(props.countries.data);
     }
   }, [props.countries.data]);
 
@@ -33,7 +37,11 @@ const Home = (props: Props) => {
           <SearchBox
             type="text"
             onChange={value => {
-              console.log(value);
+              setCountries(
+                props.countries.data.filter(c =>
+                  c.name.toLowerCase().includes(value.toLowerCase())
+                )
+              );
             }}
           />
         </div>
@@ -45,6 +53,18 @@ const Home = (props: Props) => {
           />
         </div>
       </Row>
+      <div
+        style={{
+          display: "flex",
+          flexFlow: "row wrap",
+          justifyContent: "center"
+        }}
+      >
+        {countries &&
+          countries.map(country => (
+            <CountryCard country={country} key={country.alpha3Code} />
+          ))}
+      </div>
     </Container>
   );
 };
